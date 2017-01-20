@@ -1,0 +1,22 @@
+{
+  "name": "bizcard",
+  "version": "1.0.0",
+  "description": "Bizcard allows you to download any business's contact info as a vCard on your device.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwincarbajal/bizcard.git"
+  },
+  "author": "Edwin Carbajal, Matt Kubota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwincarbajal/bizcard/issues"
+  },
+  "homepage": "https://github.com/edwincarbajal/bizcard#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
