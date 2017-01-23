@@ -1,10 +1,10 @@
 # bizcard [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
 
-> Bizcard allows you to download any business's contact info as a vcard on your device.
+> Bizcard allows you to download any business's contact info as a vCard on your device.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -41,7 +41,7 @@ Install dependencies
 npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+To start the server run `node_modules/.bin/http-server src/public` and go to [http://localhost:8080](http://localhost:8080)
 
 ## Built With
 
