@@ -1,4 +1,4 @@
-# bizcard [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
+# bizcard [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/edwincarbajal/bizcard) [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
 
 > Bizcard allows you to download any business's contact info as a vCard on your device.
 
@@ -21,8 +21,6 @@ brew upgrade node
 ```
 
 ### Installing
-
-A step by step series of examples that tell you have to get a development env running
 
 Clone the repo to you local machine
 
