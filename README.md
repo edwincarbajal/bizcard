@@ -39,13 +39,15 @@ Install dependencies
 npm install
 ```
 
-To start the server run `node_modules/.bin/http-server src/public` and go to [http://localhost:8080](http://localhost:8080)
+To start the server in development run `npm run start-dev` and go to [http://localhost:3333](http://localhost:3333)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [NodeJS]
+* [Express]
+* [React]
+* [Bootstrap]
+* [GooglePlaces]
 
 ## Contributing
 
