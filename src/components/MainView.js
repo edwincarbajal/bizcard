@@ -1,11 +1,11 @@
 "use strict";
 
-import React from 'react';
+import React, { Component } from 'react';
 import MapView from './MapView';
 import InformationView from './InformationView';
 
 
-export default class MainView extends React.Component {
+export default class MainView extends Component {
 	render() {
 		return (
 			<div className="main-container">
