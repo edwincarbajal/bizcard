@@ -1,0 +1,21 @@
+body {
+  background-color: #F1F1F1;
+}
+
+/* layout */
+.container-fluid {
+  padding: 0;
+  background-color: #ffffff;
+}
+  /* navbar */
+.navbar-brand {
+  margin-right: 0;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+}
