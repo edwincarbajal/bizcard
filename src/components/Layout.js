@@ -12,6 +12,9 @@ export default class Layout extends React.Component {
           Cras justo odio
         </li>
       </ul>
+      <div>
+        <MainView/>
+      </div>
     );
   }
 }
