@@ -1,8 +1,8 @@
 "use strict";
 
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class InformationView extends React.Component {
+export default class InformationView extends Component {
 	render() {
 		return (
 			<li className="information">
