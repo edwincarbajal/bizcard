@@ -1,8 +1,8 @@
 "use strict";
 
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class MapView extends React.Component {
+export default class MapView extends Component {
 	render() {
 		return (
 			<div className="map">
