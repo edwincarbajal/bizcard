@@ -1,8 +1,9 @@
 'use strict'
 
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 import Layout from './components/Layout';
+import MainView from './components/MainView';
 import NotFoundPage from './components/NotFoundPage';
 
 const routes = (
