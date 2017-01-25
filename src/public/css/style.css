@@ -13,6 +13,15 @@ body {
   text-align: center;
 }
 
+/* MainView */
+
+  /* SearchBar */
+.search-container {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: #f1f1f1;
+}
+
 /* footer */
 footer {
   width: 100%;
