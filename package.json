@@ -4,7 +4,9 @@
   "description": "Bizcard allows you to download any business's contact info as a vCard on your device.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js",
+    "start-dev": "npm run start-dev-hmr",
+    "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "babel-core": "^6.22.1",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "babel-preset-react-hmre": "^1.1.1",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "react": "^15.4.2",
@@ -31,6 +34,7 @@
     "babel-loader": "^6.2.10",
     "http-server": "^0.9.0",
     "pryjs": "^1.0.3",
+    "react-hot-loader": "^1.3.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }
