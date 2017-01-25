@@ -4,9 +4,14 @@ import { Link } from 'react-router';
 export default class Layout extends React.Component {
   render() {
     return (
-      <h1>
-        Hello World!
-      </h1>
+      <ul className="list-group">
+        <li className="list-group-item active">
+          Cras justo odio
+        </li>
+        <li className="list-group-item">
+          Cras justo odio
+        </li>
+      </ul>
     );
   }
 }
