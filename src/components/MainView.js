@@ -16,13 +16,16 @@ export default class MainView extends Component {
 					</div>
 				</div>
 
-				<div className="map-view">
-					<MapView/>
-				</div>
-				<div className="information-view">
-					<InformationView/>
+				<div className="row">
+					<div className="map-container col">
+						<MapView />
+					</div>
+
+					<div className="information-view col">
+						<InformationView/>
+					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }

@@ -1,6 +1,9 @@
 body {
   background-color: #F1F1F1;
 }
+.row {
+  margin: 0;
+}
 
 /* layout */
 .container-fluid {
@@ -20,6 +23,12 @@ body {
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: #f1f1f1;
+}
+
+  /* Map */
+.map-container {
+  height: 630px;
+  background-color: #383738;
 }
 
 /* footer */
