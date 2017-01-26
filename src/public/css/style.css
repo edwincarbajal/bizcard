@@ -4,6 +4,17 @@ body {
 .row {
   margin: 0;
 }
+.col-md-6 {
+  padding: 0;
+  margin: 0;
+}
+.form-control {
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+.img-thumbnail {
+  margin-bottom: 20px;
+}
 
 /* layout */
 .container-fluid {
@@ -20,10 +31,12 @@ body {
 
   /* SearchBar */
 .search-container {
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 65px;
+  padding-bottom: 65px;
   background-color: #f1f1f1;
 }
+
+/* body-container */
 
   /* Map */
 .map-container {
@@ -32,31 +45,10 @@ body {
 }
 
 /* information view */
-.name {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
-.picture {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  height: 300px;
-  width: 439px;
-}
-
-.address {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.phone {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.website {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.info-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f1f1f1;
 }
 
 /* footer */
