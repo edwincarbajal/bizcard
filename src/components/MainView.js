@@ -17,10 +17,10 @@ export default class MainView extends Component {
 				</div>
 				
 				<div className="row">
-					<div className="map-container col">
+					<div className="map-container col-md-6">
 						<MapView />
 					</div>
-					<div className="information-view col">
+					<div className="information-view col-md-6">
 						<InformationView/>
 					</div>
 				</div>
