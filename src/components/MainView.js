@@ -15,12 +15,12 @@ export default class MainView extends Component {
 						<SearchBar />
 					</div>
 				</div>
-				
+
 				<div className="row">
-					<div className="map-container col-md-6">
+					<div className="map-container col-md-8">
 						<MapView />
 					</div>
-					<div className="information-view col-md-6">
+					<div className="info-container col-md-4">
 						<InformationView/>
 					</div>
 				</div>
