@@ -10,17 +10,14 @@ export default class Layout extends Component {
         </nav>
         <div className="app-content">{this.props.children}</div>
         <footer>
-          <div className="col-12 col-md-auto">
-            <p>
-              <a href="#">
-                About
-              </a>
-              <span>
-                Changelog
-              </span>
-            </p>
+          <div className="">
+            <ul className="list-inline">
+              <li className="list-inline-item">About</li>
+              <li className="list-inline-item">Changelog</li>
+            </ul>
           </div>
-          <div className="col-12 col-md-auto">
+
+          <div className="">
             <p>
               &copy; 2017 Bizcard
             </p>
