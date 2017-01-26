@@ -31,6 +31,34 @@ body {
   background-color: #383738;
 }
 
+/* information view */
+.name {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.picture {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 300px;
+  width: 405px;
+}
+
+.address {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.phone {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.website {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 /* footer */
 footer {
   width: 100%;
