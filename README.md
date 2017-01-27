@@ -1,6 +1,6 @@
 # bizcard
 
-# ![bizcard](img/bizcard_logo.png)
+# ![bizcard](img/bizcard_logo.svg)
 
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/edwincarbajal/bizcard) [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
 
