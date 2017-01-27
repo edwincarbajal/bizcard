@@ -1,4 +1,8 @@
-# bizcard [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/edwincarbajal/bizcard) [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
+# bizcard
+
+# ![bizcard](img/bizcard_logo.png)
+
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/edwincarbajal/bizcard) [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
 
 > Bizcard allows you to download any business's contact info as a vCard on your device.
 
