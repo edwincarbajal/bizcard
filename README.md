@@ -1,6 +1,6 @@
 # bizcard
 
-<p align="center"><img width=12.5% src="https://github.com/edwincarbajal/bizcard/blob/master/src/public/img/bizcard_logo.svg"></p>
+<p align="center"><img width=12.5% src="https://github.com/edwincarbajal/bizcard/blob/master/src/public/img/finished_logo_mockup_.pdf"></p>
 
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/edwincarbajal/bizcard) [![Dependencies version](https://david-dm.org/edwincarbajal/bizcard.svg)](https://david-dm.org/edwincarbajal/bizcard) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/edwincarbajal/bizcard)
 
