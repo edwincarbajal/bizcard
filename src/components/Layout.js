@@ -6,7 +6,9 @@ export default class Layout extends Component {
     return (
       <div className="container-fluid">
         <nav className="navbar navbar-light">
-          <a className="navbar-brand" href="#">Bizcard</a>
+          <a className="navbar-brand" href="/">
+            <img src="/img/bizcard_logo.svg" width="200" height="40" alt="" />
+          </a>
         </nav>
         <div className="app-content">{this.props.children}</div>
         <footer>

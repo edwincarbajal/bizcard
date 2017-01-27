@@ -1,6 +1,9 @@
 body {
   background-color: #F1F1F1;
 }
+.navbar {
+  box-shadow: 0 5px 9px -5px #808080;
+}
 .row {
   margin: 0;
 }
@@ -14,6 +17,9 @@ body {
 }
 .img-thumbnail {
   margin-bottom: 20px;
+}
+.btn {
+  border-radius: 0;
 }
 
 /* layout */
