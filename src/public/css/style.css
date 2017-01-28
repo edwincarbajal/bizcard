@@ -21,6 +21,9 @@ body {
 .btn {
   border-radius: 0;
 }
+label {
+  display: none !important;
+}
 
 /* layout */
 .container-fluid {
@@ -41,7 +44,15 @@ body {
   padding-bottom: 65px;
   background-color: #f1f1f1;
 }
+.search-container .form-control {
+  padding: 10px;
+  margin-bottom: 0;
+  box-shadow: 1px 2px 9px -2px #808080;
+}
 
+.search-container .form-control:hover {
+  box-shadow: 1px 10px 30px -5px #808080;
+}
 /* body-container */
 
   /* Map */

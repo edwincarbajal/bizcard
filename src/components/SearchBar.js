@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import MyCustomInput from './MyCustomInput';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -27,10 +26,17 @@ export default class SearchBar extends Component {
     });
   }
   render() {
+    const cssClasses = {
+      hideLabel: true,
+      input: 'form-control'
+    }
+
     return (
-      <PlacesAutocomplete  value={this.state.address} onChange={this.onChange}>
-        <MyCustomInput />
-      </PlacesAutocomplete>
+      <div className="row">
+        <div className="col-lg-12">
+          <PlacesAutocomplete value={this.state.address} onChange={this.onChange} classNames={cssClasses}  placeholder={"Search for a business..."}/>
+        </div>
+      </div>
     );
   }
 }
