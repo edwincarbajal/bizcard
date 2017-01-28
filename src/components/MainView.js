@@ -11,7 +11,7 @@ export default class MainView extends Component {
 		return (
 			<div className="main-container">
 				<div className="search-container row justify-content-md-center">
-					<div className="col-12 col-md-auto">
+					<div className="col-lg-5 col-md-auto">
 						<SearchBar />
 					</div>
 				</div>
