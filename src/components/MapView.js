@@ -6,13 +6,13 @@ export default class MapView extends Component {
 	componentDidMount() {
 			// const points = {lat: 40.7065670, lng: -74.0090420};
 			var map = new google.maps.Map(document.getElementById('map'), {
-	        center: {lat: 40.7065670, lng: -74.0090420},
+	        center: {},
 	        zoom: 13
 	      });
-			var marker = new google.maps.Marker({
-				position: {lat: 40.7065670, lng: -74.0090420},
-				map: map
-			});
+			// var marker = new google.maps.Marker({
+			// 	position: {},
+			// 	map: map
+			// });
 
 			var infoWindow = new google.maps.InfoWindow({map: map});
 
