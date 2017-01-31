@@ -7,6 +7,11 @@ import InformationView from './InformationView';
 
 
 export default class MainView extends Component {
+	componentDidMount() {
+		var input = document.getElementById('pac-input');
+		var serachBox = new google.maps.places.SearchBox(input);
+	}
+
 	render() {
 		return (
 			<div className="main-container">
