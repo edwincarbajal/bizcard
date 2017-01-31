@@ -58,6 +58,7 @@ label {
   /* Map */
 .map-container {
   height: 630px;
+  padding: 0;
   background-color: #383738;
 }
 
