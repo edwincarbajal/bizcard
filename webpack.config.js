@@ -23,7 +23,7 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: path.join(__dirname, 'src'),
+      test: /\.(js|jsx)$/,
       loader: ['babel-loader'],
       query: {
         cacheDirectory: 'babel_cache',

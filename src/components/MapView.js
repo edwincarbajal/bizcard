@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 export default class MapView extends Component {
 	componentDidMount() {
-		const points = {lat: 40.8325080, lng: -73.9184370};
+		const points = {lat: 40.7065670, lng: -74.0090420};
 		const map = new google.maps.Map(document.getElementById('map'), {
         center: points,
         zoom: 13
@@ -12,7 +12,36 @@ export default class MapView extends Component {
 		const marker = new google.maps.Marker({
 			position: points,
 			map: map
-		})
+		});
+
+		var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      const handleLocationError = (browserHasGeolocation, infoWindow, pos) => {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
 	}
 
 	render() {
