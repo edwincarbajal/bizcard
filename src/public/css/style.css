@@ -61,6 +61,13 @@ label {
   background-color: #383738;
 }
 
+.map{
+  width: 50%;
+  height: 400px;
+  background-color: grey;
+}
+/* don't look up where i live */
+
 /* information view */
 .info-container {
   padding-left: 20px;
