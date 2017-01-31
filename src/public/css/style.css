@@ -58,15 +58,15 @@ label {
   /* Map */
 .map-container {
   height: 630px;
+  padding: 0;
   background-color: #383738;
 }
 
-.map{
-  width: 50%;
-  height: 400px;
-  background-color: grey;
+
+#map{
+  width: 100%;
+  height: 100%;
 }
-/* don't look up where i live */
 
 /* information view */
 .info-container {
