@@ -9,8 +9,18 @@ import InformationView from './InformationView';
 export default class MainView extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			address: '',
+			position: {
+				lat: null,
+				lng: null
+			},
+			information: {},
+		}
 		this.handleMouseOver = this.handleMouseOver.bind(this);
 		this.handleMouseLeave = this.handleMouseLeave.bind(this);
+		this.handleSearchInput = this.handleSearchInput.bind(this);
+		this.handleSearchClick = this.handleSearchClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -32,6 +42,28 @@ export default class MainView extends Component {
 	}
 	// end styling //
 
+	handleSearchInput(e) {
+		e.preventDefault();
+
+		const input = e.target.value;
+		this.setState({
+			address: input,
+		});
+		console.log(`The current state of the address is: ${this.state.address}`);
+	}
+
+	handleSearchClick() {
+		const address = this.state.address;
+		$.ajax({
+			// call the geocode api with current address state
+			// address needs to be spaced i.e 48+Wall+St
+
+			// change the state of postion object with response from api
+
+			// catch any errors
+		};
+	}
+
 	render() {
 		return (
 			<div className="main-container">
@@ -40,9 +72,9 @@ export default class MainView extends Component {
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="input-group">
-									<input id="pac-input" className="controls form-control" onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
+									<input id="pac-input" className="controls form-control" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
 									<span className="input-group-btn">
-										<button id="search-bar-submit" className="btn" type="button"><i className="fa fa-search" aria-hidden="true"></i></button>
+										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick}><i className="fa fa-search" aria-hidden="true"></i></button>
 									</span>
 								</div>
 							</div>
