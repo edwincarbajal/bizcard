@@ -5,9 +5,6 @@ import React, { Component } from 'react';
 export default class MapView extends Component {
 	componentDidMount() {
 			// const points = {lat: 40.7065670, lng: -74.0090420};
-<<<<<<< HEAD
-			
-=======
 			var map = new google.maps.Map(document.getElementById('map'), {
 	        center: {},
 	        zoom: 13
@@ -48,7 +45,6 @@ export default class MapView extends Component {
 							'Error: The Geolocation service failed.' :
 							'Error: Your browser doesn\'t support geolocation.');
 						}
->>>>>>> d1576116020e2081d47066c01bdb88e5e7d8bcbc
 	      }
 
 
