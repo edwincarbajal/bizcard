@@ -47,6 +47,7 @@ export default class MapView extends Component {
 						}
 	      }
 
+
 				render() {
 					return (
 						<div ref="map" id="map"></div>
