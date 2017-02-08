@@ -61,7 +61,7 @@ export default class MainView extends Component {
 			// change the state of postion object with response from api
 
 			// catch any errors
-		};
+		});
 	}
 
 	render() {
