@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import MapView from './MapView';
 import InformationView from './InformationView';
+import $ from 'jquery';
 
 
 export default class MainView extends Component {
@@ -54,13 +55,28 @@ export default class MainView extends Component {
 
 	handleSearchClick() {
 		const address = this.state.address;
+		const parsedAddress = address.replace(/, United States/, '').replace(/,/g, '').replace(/\s/g, "+");
+		const geocode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+		const key = '&key=AIzaSyCjOJON60_XCD-Ulvo98ai4gthTykt-sCE';
 		$.ajax({
+			url: geocode+parsedAddress+key
 			// call the geocode api with current address state
 			// address needs to be spaced i.e 48+Wall+St
 
 			// change the state of postion object with response from api
 
 			// catch any errors
+		}).done((response) => {
+			const addressLat = response.results[0].geometry.location.lat
+			const addressLng = response.results[0].geometry.location.lng
+			console.log(addressLat);
+			console.log(addressLng);
+			this.setState({
+				position: {
+					lat: addressLat,
+					lng: addressLng
+				}
+			});
 		});
 	}
 
