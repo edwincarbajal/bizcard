@@ -24,6 +24,9 @@ body {
 label {
   display: none !important;
 }
+.btn-primary {
+  background-color: #0275d8 !important;
+}
 
 /* layout */
 .container-fluid {
@@ -53,6 +56,19 @@ label {
 .search-container .form-control:hover {
   box-shadow: 1px 10px 30px -5px #808080;
 }
+
+#search-bar-submit {
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 1px 2px 9px -2px #808080;
+}
+
+#search-bar-submit:hover {
+  background-color: #0275d8;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 /* body-container */
 
   /* Map */
@@ -73,6 +89,10 @@ label {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #f1f1f1;
+}
+
+.download-btn {
+  cursor: pointer;
 }
 
 /* footer */

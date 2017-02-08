@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js",
     "start-dev": "npm run start-dev-hmr",
-    "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot"
+    "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot",
+    "g-bundle": "NODE_ENV=production node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",

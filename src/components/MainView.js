@@ -8,71 +8,61 @@ import InformationView from './InformationView';
 
 export default class MainView extends Component {
 	constructor(props) {
-		super(props) 
-			this.state = {
-				place: ''
-			}
-			// this.handleFormSubmit = this.handleFormSubmit.bind(this);
-		
+		super(props);
+		this.state = {
+			address: '',
+			position: {
+				lat: null,
+				lng: null
+			},
+			information: {},
+		}
+		this.handleMouseOver = this.handleMouseOver.bind(this);
+		this.handleMouseLeave = this.handleMouseLeave.bind(this);
+		this.handleSearchInput = this.handleSearchInput.bind(this);
+		this.handleSearchClick = this.handleSearchClick.bind(this);
 	}
 
-	// handleFormSubmit(event) {
-	// 	$.ajax({
-	// 		method: 'GET',
-	// 		url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=pos&radius=1000&key=AIzaSyDEnDR2l0rNeMjl8b5guxbSQrX4rkEtgVU`,
-	// 		data: { place: event.action }
-	// 	}).done((response) => {
-	// 		this.setState({
-	// 			place: reponse
-	// 		});
-	// 	});
-
-
-	// };
-
-	// Create the search box and link it to the UI element.
 	componentDidMount() {
-		var input = document.getElementById('pac-input');
-		var searchBox = new google.maps.places.SearchBox(input);
-		var map = new google.maps.Map(document.getElementById('map'), {
-			        center: {},
-			        zoom: 13
-			      });
-					// var marker = new google.maps.Marker({
-					// 	position: {},
-					// 	map: map
-					// });
+		const input = document.getElementById('pac-input');
+		const searchBox = new google.maps.places.SearchBox(input);
+	}
 
-		var infoWindow = new google.maps.InfoWindow({map: map});
+	// add styling to searchbar //
+	handleMouseOver(el) {
+		const input = el.target;
+		const button = input.nextElementSibling.children[0];
+		button.className += ' btn-primary';
+	}
 
-			        // Try HTML5 geolocation.
-			        if (navigator.geolocation) {
-			          navigator.geolocation.getCurrentPosition(function(position) {
-			            var pos = {
-			              lat: position.coords.latitude,
-			              lng: position.coords.longitude
-			            };
-		var currentResults = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${pos}&radius=1000&key=AIzaSyDEnDR2l0rNeMjl8b5guxbSQrX4rkEtgVU`
-		console.log(currentResults);
+	handleMouseLeave(el) {
+		const input = el.target;
+		const button = input.nextElementSibling.children[0];
+		button.classList.remove('btn-primary');
+	}
+	// end styling //
 
-			            infoWindow.setPosition(pos);
-			            infoWindow.setContent('Location found.');
-			            map.setCenter(pos);
-			          }, function() {
-			            handleLocationError(true, infoWindow, map.getCenter());
-			          });
-			        } else {
-			          // Browser doesn't support Geolocation
-			          handleLocationError(false, infoWindow, map.getCenter());
-			        }
+	handleSearchInput(e) {
+		e.preventDefault();
 
-							function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-								infoWindow.setPosition(pos);
-								infoWindow.setContent(browserHasGeolocation ?
-									'Error: The Geolocation service failed.' :
-									'Error: Your browser doesn\'t support geolocation.');
-								}
-	}	
+		const input = e.target.value;
+		this.setState({
+			address: input,
+		});
+		console.log(`The current state of the address is: ${this.state.address}`);
+	}
+
+	handleSearchClick() {
+		const address = this.state.address;
+		$.ajax({
+			// call the geocode api with current address state
+			// address needs to be spaced i.e 48+Wall+St
+
+			// change the state of postion object with response from api
+
+			// catch any errors
+		};
+	}
 
 	render() {
 		return (
@@ -80,11 +70,13 @@ export default class MainView extends Component {
 				<div className="search-container row justify-content-md-center">
 					<div className="col-lg-5 col-md-auto">
 						<div className="row">
-							<div className="col-lg-12 input-group">
-								<input id="pac-input" className="controls form-control" type="text" name="place" placeholder="Search Box" />
-								<span className="input-group-btn">
-        							<button className="btn btn-default" type="button">Find</button>
-      							</span>
+							<div className="col-lg-12">
+								<div className="input-group">
+									<input id="pac-input" className="controls form-control" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
+									<span className="input-group-btn">
+										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick}><i className="fa fa-search" aria-hidden="true"></i></button>
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
