@@ -62,7 +62,7 @@ export default class MainView extends Component {
 		const address = this.state.address;
 		const parsedAddress = address.replace(/, United States/, '').replace(/,/g, '').replace(/\s/g, "+");
 		const geocode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-		const key = '&key=AIzaSyCjOJON60_XCD-Ulvo98ai4gthTykt-sCE';
+		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
 		$.ajax({
 			// call the geocode api with current address state
 			// address needs to be spaced i.e 48+Wall+St
