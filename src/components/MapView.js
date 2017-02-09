@@ -3,6 +3,14 @@
 import React, { Component } from 'react';
 
 export default class MapView extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			lat: props.position.lat,
+			lng: props.position.lng,
+		}
+	}
+
 	componentDidMount() {
 			// const points = {lat: 40.7065670, lng: -74.0090420};
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -46,6 +54,13 @@ export default class MapView extends Component {
 							'Error: Your browser doesn\'t support geolocation.');
 						}
 	      }
+
+				// componentDidUpdate(prevProps, prevState) {
+				// 	console.log('This is prevProps');
+				// 	console.log(prevProps);
+				// 	console.log('This is prevState');
+				// 	console.log(prevState);
+				// }
 
 
 				render() {

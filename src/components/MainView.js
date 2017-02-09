@@ -16,7 +16,7 @@ export default class MainView extends Component {
 				lat: null,
 				lng: null
 			},
-			information: {},
+			addressId: '',
 		}
 		this.handleMouseOver = this.handleMouseOver.bind(this);
 		this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -27,6 +27,11 @@ export default class MainView extends Component {
 	componentDidMount() {
 		const input = document.getElementById('pac-input');
 		const searchBox = new google.maps.places.SearchBox(input);
+	}
+
+	shouldComponentUpdate(nextProps, nextState){
+    // return a boolean value
+    return true;
 	}
 
 	// add styling to searchbar //
@@ -57,27 +62,27 @@ export default class MainView extends Component {
 		const address = this.state.address;
 		const parsedAddress = address.replace(/, United States/, '').replace(/,/g, '').replace(/\s/g, "+");
 		const geocode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-		const key = '&key=AIzaSyCjOJON60_XCD-Ulvo98ai4gthTykt-sCE';
+		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
 		$.ajax({
-			url: geocode+parsedAddress+key
 			// call the geocode api with current address state
 			// address needs to be spaced i.e 48+Wall+St
+			url: geocode+parsedAddress+key
+
 
 			// change the state of postion object with response from api
-
-			// catch any errors
 		}).done((response) => {
-			const addressLat = response.results[0].geometry.location.lat
-			const addressLng = response.results[0].geometry.location.lng
-			console.log(addressLat);
-			console.log(addressLng);
+			const addressLat = response.results[0].geometry.location.lat;
+			const addressLng = response.results[0].geometry.location.lng;
+			const addressId = response.results[0].place_id;
 			this.setState({
 				position: {
 					lat: addressLat,
 					lng: addressLng
-				}
+				},
+				addressId: addressId,
 			});
 		});
+		// catch any errors
 	}
 
 	render() {
@@ -100,10 +105,10 @@ export default class MainView extends Component {
 
 				<div className="row">
 					<div className="map-container col-md-8">
-						<MapView />
+						<MapView position={this.state.position}/>
 					</div>
 					<div className="info-container col-md-4">
-						<InformationView/>
+						<InformationView addressId={this.state.addressId}/>
 					</div>
 				</div>
 			</div>
