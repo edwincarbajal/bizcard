@@ -49,10 +49,10 @@ To start the server in development run `npm run start-dev` and visit [http://loc
 
 ## Built With
 
-* [NodeJS]
-* [Express]
-* [React]
-* [Bootstrap]
+* [NodeJS](https://nodejs.org/en/)
+* [Express](http://expressjs.com)
+* [React](https://facebook.github.io/react/)
+* [Bootstrap](http://getbootstrap.com)
 * [GooglePlaces]
 
 ## Contributing
