@@ -66,7 +66,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Edwin Carbajal** - *Project lead* - [edwincarbajal](https://github.com/edwincarbajal)
-* **Matthew Kubota** - *Initial work* - [mattk5](https://github.com/mattk5)
+* **Matthew Kubota** - *Developer* - [mattk5](https://github.com/mattk5)
 
 See also the list of [contributors](https://github.com/edwincarbajal/bizcard/contributors) who participated in this project.
 
