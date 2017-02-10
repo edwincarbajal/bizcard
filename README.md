@@ -44,7 +44,8 @@ npm install
 ```
 
 To start the server in development run `npm run start-dev` and visit [http://localhost:3333](http://localhost:3333)
-![](http://gph.is/2loTbeA)
+
+![](https://media.giphy.com/media/3qLHG4aEoXeUg/giphy.gif)
 
 ## Built With
 
