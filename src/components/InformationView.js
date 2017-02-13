@@ -65,7 +65,7 @@ export default class InformationView extends Component {
 						website: response.result.website,
 					},
 				});
-			})
+			}).then(pictureCall())
 		
 		// make the ajax call for the photo with this call below, the response will be an image 
 		// save the response to state and then render in the img tag:
