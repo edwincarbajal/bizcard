@@ -45,24 +45,27 @@ export default class InformationView extends Component {
 			// 				 }	
 		let id = nextProps.addressId;
 		let photoRef = nextState.photoRef
-		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		// const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
 		const pictureUrl = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=';
-		$.ajax({
-			type: "GET",
-			url: url+id+key,
-			dataType: 'json',
-		}).done((response) => {
-			this.setState({
-				information: {
-					name: response.result.name,
-					photoRef: response.result.photos[3].photo_reference,
-					address: response.result.formatted_address,
-					phoneNumber: response.result.formatted_phone_number,
-					website: response.result.website,
-				},
-			});
-		})
+			$.ajax({
+				type: "GET",
+				url: url+id+key,
+				dataType: 'json',
+			}).done((response) => {
+				console.log(response);
+				this.setState({
+					information: {
+						name: response.result.name,
+						icon: response.result.icon,
+						photoRef: response.result.photos[0].photo_reference,
+						address: response.result.formatted_address,
+						phoneNumber: response.result.formatted_phone_number,
+						website: response.result.website,
+					},
+				});
+			})
 		
 		// make the ajax call for the photo with this call below, the response will be an image 
 		// save the response to state and then render in the img tag:
