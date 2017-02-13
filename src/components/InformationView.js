@@ -10,10 +10,14 @@ export default class InformationView extends Component {
 			addressId: '',
 			information: {
 				name: 'Name',
+				//the photoReference key from photoArr in first ajax call
+				photoRef: 'PhotoRef',
 				address: 'Address',
 				phoneNumber: 'Phone Number',
 				website: 'Website',
 			},
+			// after 2nd ajax call, update this state with the img to be rendered:
+			picture: ''
 		}
 	}
 
@@ -29,23 +33,44 @@ export default class InformationView extends Component {
 	}
 
 	componentWillUpdate(nextProps, nextState) {
+		 // function pictureCall() { $.ajax({
+			// 					 type: "GET",
+			// 					 url: pictureUrl+photoRef+key,
+			// 					 dataType: 'json',
+			// 				 }).done((response) => {
+			// 					 this.setState({
+			// 						 picture: response	
+			// 					 });
+			// 				 });
+			// 				 }	
 		let id = nextProps.addressId;
+		let photoRef = nextState.photoRef
+		// const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
-		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		$.ajax({
-			type: "GET",
-			url: url+id+key,
-			dataType: 'json',
-		}).done((response) => {
-			this.setState({
-				information: {
-					name: response.result.name,
-					address: response.result.formatted_address,
-					phoneNumber: response.result.formatted_phone_number,
-					website: response.result.website,
-				},
-			});
-		});
+		const pictureUrl = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=';
+			$.ajax({
+				type: "GET",
+				url: url+id+key,
+				dataType: 'json',
+			}).done((response) => {
+				console.log(response);
+				this.setState({
+					information: {
+						name: response.result.name,
+						icon: response.result.icon,
+						photoRef: response.result.photos[0].photo_reference,
+						address: response.result.formatted_address,
+						phoneNumber: response.result.formatted_phone_number,
+						website: response.result.website,
+					},
+				});
+			}).then(pictureCall())
+		
+		// make the ajax call for the photo with this call below, the response will be an image 
+		// save the response to state and then render in the img tag:
+		// https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference= &key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM
+		
 	}
 
 	render() {
@@ -53,7 +78,7 @@ export default class InformationView extends Component {
 			<div className="input-container">
 				<input className="form-control" type="text" placeholder={this.state.information.name} readOnly />
 
-				<img src="..." alt="..." className="img-thumbnail" />
+				<img className="img-thumbnail" />
 
 				<textarea className="form-control" id="exampleTextarea" rows="3" placeholder={this.state.information.address} readOnly></textarea>
 

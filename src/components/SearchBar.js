@@ -25,6 +25,7 @@ export default class SearchBar extends Component {
       console.log(`Yay! got latitude and longitude for ${address}`, { lat, lng })
     });
   }
+  
   render() {
     const cssClasses = {
       hideLabel: true,
