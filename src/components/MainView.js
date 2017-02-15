@@ -83,6 +83,7 @@ export default class MainView extends Component {
 					},
 					addressId: addressId,
 				});
+			this.refs.inputValue.value="";
 			});
 		}
 		// catch any errors
@@ -96,9 +97,9 @@ export default class MainView extends Component {
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="input-group">
-									<input id="pac-input" className="controls form-control" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
+									<input id="pac-input" className="controls form-control" ref="inputValue" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
 									<span className="input-group-btn">
-										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick}><i className="fa fa-search" aria-hidden="true"></i></button>
+										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick} ><i className="fa fa-search" aria-hidden="true"></i></button>
 									</span>
 								</div>
 							</div>
