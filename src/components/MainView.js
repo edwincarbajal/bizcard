@@ -62,8 +62,8 @@ export default class MainView extends Component {
 		const address = this.state.address;
 		const parsedAddress = address.replace(/, United States/, '').replace(/,/g, '').replace(/\s/g, "+");
 		const geocode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-		// const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
+		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		// const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		if (!address){
 			alert('Please enter a valid address!')
 		} else {
