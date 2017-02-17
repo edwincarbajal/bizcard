@@ -62,26 +62,30 @@ export default class MainView extends Component {
 		const address = this.state.address;
 		const parsedAddress = address.replace(/, United States/, '').replace(/,/g, '').replace(/\s/g, "+");
 		const geocode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		$.ajax({
-			// call the geocode api with current address state
-			// address needs to be spaced i.e 48+Wall+St
-			url: geocode+parsedAddress+key
-
-
-			// change the state of postion object with response from api
-		}).done((response) => {
-			const addressLat = response.results[0].geometry.location.lat;
-			const addressLng = response.results[0].geometry.location.lng;
-			const addressId = response.results[0].place_id;
-			this.setState({
-				position: {
-					lat: addressLat,
-					lng: addressLng
-				},
-				addressId: addressId,
+		// const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
+		if (!address){
+			alert('Please enter a valid address!')
+		} else {
+			$.ajax({
+				// call the geocode api with current address state
+				// address needs to be spaced i.e 48+Wall+St
+				url: geocode+parsedAddress+key
+				// change the state of postion object with response from api
+			}).done((response) => {
+				const addressLat = response.results[0].geometry.location.lat;
+				const addressLng = response.results[0].geometry.location.lng;
+				const addressId = response.results[0].place_id;
+				this.setState({
+					position: {
+						lat: addressLat,
+						lng: addressLng
+					},
+					addressId: addressId,
+				});
+			this.refs.inputValue.value="";
 			});
-		});
+		}
 		// catch any errors
 	}
 
@@ -93,9 +97,9 @@ export default class MainView extends Component {
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="input-group">
-									<input id="pac-input" className="controls form-control" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
+									<input id="pac-input" className="controls form-control" ref="inputValue" onSelect={this.handleSearchInput} onMouseOver={this.handleMouseOver} onMouseLeave={this.handleMouseLeave} type="text" placeholder="Search for a business..." />
 									<span className="input-group-btn">
-										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick}><i className="fa fa-search" aria-hidden="true"></i></button>
+										<button id="search-bar-submit" className="btn" type="button" onClick={this.handleSearchClick} ><i className="fa fa-search" aria-hidden="true"></i></button>
 									</span>
 								</div>
 							</div>
