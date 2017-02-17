@@ -13,6 +13,7 @@ export default class InformationView extends Component {
 				address: 'Address',
 				phoneNumber: 'Phone Number',
 				website: 'Website',
+				photoRef: '',
 			},
 		}
 	}
@@ -31,8 +32,8 @@ export default class InformationView extends Component {
 	componentWillUpdate(nextProps, nextState) {
 		let id = nextProps.addressId;
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
-		// const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
+		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
+		// const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		$.ajax({
 			type: "GET",
 			url: url+id+key,
@@ -44,17 +45,19 @@ export default class InformationView extends Component {
 					address: response.result.formatted_address,
 					phoneNumber: response.result.formatted_phone_number,
 					website: response.result.website,
+					photoRef: response.result.photos[0].photo_reference,
 				},
 			});
 		});
 	}
 
 	render() {
+		let photo_ref = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.state.information.photoRef}&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM`
 		return (
 			<div className="input-container">
 				<input className="form-control" type="text" placeholder={this.state.information.name} readOnly />
 
-				<img src="..." alt="..." className="img-thumbnail" />
+				<img src={photo_ref} alt="..." className="img-thumbnail" />
 
 				<textarea className="form-control" id="exampleTextarea" rows="3" placeholder={this.state.information.address} readOnly></textarea>
 
