@@ -102,3 +102,10 @@ footer {
   text-align: center;
   background-color: #ffffff;
 }
+
+/* responsive design */
+@media only screen and (max-width: 767px) {
+  .map-container {
+    display: none !important;
+  }
+}
