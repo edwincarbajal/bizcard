@@ -73,7 +73,7 @@ label {
 
   /* Map */
 .map-container {
-  height: 630px;
+  height: auto;
   padding: 0;
   background-color: #383738;
 }
@@ -88,6 +88,7 @@ label {
 .info-container {
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
   background-color: #f1f1f1;
 }
 
@@ -100,4 +101,11 @@ footer {
   width: 100%;
   text-align: center;
   background-color: #ffffff;
+}
+
+/* responsive design */
+@media only screen and (max-width: 767px) {
+  .map-container {
+    display: none !important;
+  }
 }

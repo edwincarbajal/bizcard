@@ -9,6 +9,7 @@ export default class InformationView extends Component {
 		super(props);
 		this.state = {
 			addressId: '',
+			stockImg: '',
 			information: {
 				name: 'Name',
 				address: 'Address',
@@ -90,17 +91,18 @@ export default class InformationView extends Component {
 		// let splitStreetAddy = ''
 		// let splitStateZip = ''
 
+
 		return (
 			<div className="input-container">
-				<input className="form-control" type="text" placeholder={this.state.information.name} readOnly />
+				<input className="form-control" type="text" placeholder={information.name} readOnly />
 
-				<img src={photo_ref} alt="..." className="img-thumbnail" />
+				<img src={this.state.information.photoRef ? photo_ref : '/img/stock_img.svg'} alt="..." className="img-thumbnail" />
 
-				<textarea className="form-control" id="exampleTextarea" rows="3" placeholder={this.state.information.address} readOnly></textarea>
+				<textarea className="form-control" id="exampleTextarea" rows="3" placeholder={information.address} readOnly></textarea>
 
-				<input className="form-control" type="text" placeholder={this.state.information.phoneNumber} readOnly />
+				<input className="form-control" type="text" placeholder={information.phoneNumber} readOnly />
 
-				<input className="form-control" type="text" placeholder={this.state.information.website} readOnly />
+				<input className="form-control" type="text" placeholder={information.website} readOnly />
 
 				<button type="button" className="download-btn btn btn-outline-primary btn-lg btn-block">Download vCard</button>
 			</div>
