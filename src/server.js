@@ -51,6 +51,40 @@ app.get('*', (req, res) => {
   );
 });
 
+//vCard Generator
+var express = require('express');
+var router = express.Router();
+ 
+module.exports = function (app) {
+  app.use('/', router);
+};
+ 
+router.get('/vcard?name=&address=&phoneNumber=&website=&', function (req, res, next) {
+ 
+    var vCard = require('vcards-js');
+ 
+    //create a new vCard 
+    vCard = vCard();
+ 
+    //set properties 
+    vCard.organization = '';
+    vCard.workAddress.street = '';
+    vCard.workAddress.city = '';
+    vCard.workAddress.stateProvince = '';
+    vCard.workAddress.postalCode = '';
+    vCard.workAddress.countryRegion = '';
+    vCard.workPhone = '';
+
+ 
+    //set content-type and disposition including desired filename 
+    res.set('Content-Type', 'text/vcard; name="enesser.vcf"');
+    res.set('Content-Disposition', 'inline; filename="enesser.vcf"');
+ 
+    //send the response 
+    res.send(vCard.getFormattedString());
+});
+
+
 // start the server
 const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'production';
