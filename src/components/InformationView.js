@@ -52,7 +52,7 @@ export default class InformationView extends Component {
 	}
 
 	render() {
-		let photo_ref = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.state.information.photoRef}&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM`
+		let photo_ref = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.state.information.photoRef}&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM`;
 		let { information } = this.state;
 		return (
 			<div className="input-container">
