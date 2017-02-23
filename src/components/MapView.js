@@ -12,15 +12,10 @@ export default class MapView extends Component {
 	}
 
 	componentDidMount() {
-			// const points = {lat: 40.7065670, lng: -74.0090420};
 			var map = new google.maps.Map(document.getElementById('map'), {
 	        center: {},
 	        zoom: 13
-	      });
-			// var marker = new google.maps.Marker({
-			// 	position: {},
-			// 	map: map
-			// });
+	      	});
 
 			var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -31,9 +26,6 @@ export default class MapView extends Component {
 	              lat: position.coords.latitude,
 	              lng: position.coords.longitude
 	            };
-
-	            // infoWindow.setPosition(pos);
-	            // infoWindow.setContent('Location found.');
 							var marker = new google.maps.Marker({
 								position: pos,
 								map: map
@@ -53,19 +45,40 @@ export default class MapView extends Component {
 							'Error: The Geolocation service failed.' :
 							'Error: Your browser doesn\'t support geolocation.');
 						}
-	      }
-
-				// componentDidUpdate(prevProps, prevState) {
-				// 	console.log('This is prevProps');
-				// 	console.log(prevProps);
-				// 	console.log('This is prevState');
-				// 	console.log(prevState);
-				// }
-
-
-				render() {
-					return (
-						<div ref="map" id="map"></div>
-					);
-				}
 	}
+
+	componentWillReceievProps(nextProps) {
+		this.setState({
+			lat: props.position.lat,
+			lng: props.position.lng,
+		})
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		return true;
+	}
+	
+	componentWillUpdate(nextProps, nextState) {
+		  var myLatLng = {
+		  	lat: nextProps.position.lat, 
+		  	lng: nextProps.position.lng
+		  };
+
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 16,
+		    center: myLatLng
+		  });
+
+		  var marker = new google.maps.Marker({
+		    position: myLatLng,
+		    map: map,
+		    title: 'Hello World!'
+		  });
+	}
+	
+	render() {
+		return (
+			<div ref="map" id="map"></div>
+		);
+	}
+}

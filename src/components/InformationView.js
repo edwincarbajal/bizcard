@@ -34,7 +34,6 @@ export default class InformationView extends Component {
 		let id = nextProps.addressId;
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
 		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		// const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		$.ajax({
 			type: "GET",
 			url: url+id+key,
