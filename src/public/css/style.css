@@ -27,6 +27,9 @@ label {
 .btn-primary {
   background-color: #0275d8 !important;
 }
+.alert {
+  text-align: center !important;
+}
 
 /* layout */
 .container-fluid {
