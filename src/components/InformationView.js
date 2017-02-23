@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import $ from 'jquery';
-import vcards from 'vcards-js';
 
 export default class InformationView extends Component {
 	constructor(props) {
@@ -18,7 +17,6 @@ export default class InformationView extends Component {
 				photoRef: '',
 			},
 		}
-		// this.createVcard = this.createVcard.bind(this);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -36,7 +34,6 @@ export default class InformationView extends Component {
 		let id = nextProps.addressId;
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
 		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		// const key = '&key=AIzaSyCrGYiVUGU5xJEhczYc-rVybtobuXmMkv8'
 		$.ajax({
 			type: "GET",
 			url: url+id+key,
@@ -54,44 +51,9 @@ export default class InformationView extends Component {
 		});
 	}
 
-	// splitAddress(address) {
-	// //Splits the address into array, split on commas.
-	// //Splits the State and Zip code into array.
-	// return splitAddy
-	// return splitStateZip
-	// }
-
-	// createVcard() {
-	// 	const fs = require('fs');
-	// 	console.log(fs)
-	// 	let vCard = require('vcards-js');
-
-	// 	vCard = vCard();
-
-	// 	// splitAddress(this.state.address)
-	// 	// let address = this.state.address
-	// 	// let splitAddy = address.split(/[,]/)
-	// 	// let splitStateZip = splitAddy[2].replace(/ /, '')
-
-	// 	// let name = this.state.information.name;
-
-	// 	vCard.organization = this.state.information.name;
-	// 	// vCard.workAddress.street = splitAddy[0],
-	// 	// vCard.workAddress.city = splitAddy[1],
-	// 	// vCard.workAddress.stateProvince = splitStateZip[0],
-	// 	// vCard.workAddress.postalCode = splitStateZip[1],
-	// 	// vCard.workAddress.country.Region = splitAddy[3]
-	// 	vCard.homePhone = this.state.information.phoneNumber
-
-	// 	vCard.saveToFile('./bizcard.vcf');
-	// }
-
 	render() {
 		let photo_ref = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${this.state.information.photoRef}&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM`
-		// let splitStreetAddy = ''
-		// let splitStateZip = ''
-
-
+		let { information } = this.state;
 		return (
 			<div className="input-container">
 				<input className="form-control" type="text" placeholder={information.name} readOnly />
