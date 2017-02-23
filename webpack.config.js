@@ -4,12 +4,10 @@ const debug = process.env.NODE_ENV !== "production";
 
 const webpack = require('webpack');
 const path = require('path');
-const fs = require('fs');
 
 module.exports = {
   devtool: debug ? 'inline-sourcemap' : null,
   entry: path.join(__dirname, 'src', 'app-client.js'),
-  // "target": "node",
   devServer: {
     inline: true,
     port: 3333,
@@ -17,9 +15,6 @@ module.exports = {
     historyApiFallback: {
       index: '/index-static.html'
     }
-  },
-  node: {
-    fs: "empty"
   },
   output: {
     path: path.join(__dirname, 'src', 'public', 'js'),
