@@ -36,7 +36,7 @@ export default class InformationView extends Component {
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
 		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
 
-		$.getJSON({
+		$.get({
 			type: "GET",
 			url: proxy+url+id+key,
 			dataType: 'json'
