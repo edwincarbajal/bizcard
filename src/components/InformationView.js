@@ -32,12 +32,14 @@ export default class InformationView extends Component {
 
 	componentWillUpdate(nextProps, nextState) {
 		let id = nextProps.addressId;
+		const proxy = 'https://cors-anywhere.herokuapp.com/';
 		const url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=';
 		const key = '&key=AIzaSyCPV-bBnvYyA84T-Cq6xifj8hhYtPPm7mM';
-		$.ajax({
+
+		$.getJSON({
 			type: "GET",
-			url: url+id+key,
-			dataType: 'json',
+			url: proxy+url+id+key,
+			dataType: 'json'
 		}).done((response) => {
 			this.setState({
 				information: {
