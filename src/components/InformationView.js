@@ -68,7 +68,7 @@ export default class InformationView extends Component {
 
 				<input className="form-control" type="text" placeholder={information.website} readOnly />
 
-				<button type="button" className="download-btn btn btn-outline-primary btn-lg btn-block">Download vCard</button>
+				{/* <button type="button" className="download-btn btn btn-outline-primary btn-lg btn-block">Download vCard</button> */}
 			</div>
 		);
 	}
