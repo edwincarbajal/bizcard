@@ -10,10 +10,10 @@ export default class InformationView extends Component {
 			addressId: '',
 			stockImg: '',
 			information: {
-				name: 'Name',
-				address: 'Address',
-				phoneNumber: 'Phone Number',
-				website: 'Website',
+				name: 'Piedpiper',
+				address: '5230 Newell Road, Palo Alto, CA',
+				phoneNumber: '(123) 456-7890',
+				website: 'https://www.piedpiper.com',
 				photoRef: '',
 			},
 		}
@@ -60,7 +60,7 @@ export default class InformationView extends Component {
 			<div className="input-container">
 				<input className="form-control" type="text" placeholder={information.name} readOnly />
 
-				<img src={this.state.information.photoRef ? photo_ref : '/img/stock_img.svg'} alt="..." className="img-thumbnail" />
+				<img src={this.state.information.photoRef ? photo_ref : '/img/piedpiper.jpg'} alt="..." className="img-thumbnail" />
 
 				<textarea className="form-control" id="exampleTextarea" rows="3" placeholder={information.address} readOnly></textarea>
 
