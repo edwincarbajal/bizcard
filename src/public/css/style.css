@@ -99,6 +99,11 @@ label {
   cursor: pointer;
 }
 
+/* about */
+.about-col {
+  padding: 40px 5px;
+}
+
 /* footer */
 footer {
   width: 100%;
